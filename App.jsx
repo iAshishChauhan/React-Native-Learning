@@ -8,7 +8,7 @@ const App = () => {
     <View>
       <SafeAreaView>
         <Text style={{ fontSize: 30 }}>React native Developer</Text>
-        <Text style={{ fontSize: 30 }}>Ashish Chauhan</Text>
+        <Text style={{ fontSize: 30 }}>Ashish Singh Chauhan</Text>
         <Button title='Press here.'/>
       </SafeAreaView>
     </View>
