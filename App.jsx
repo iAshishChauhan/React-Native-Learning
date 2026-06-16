@@ -2,6 +2,8 @@
 import React from 'react'
 import { Button, Text, View } from 'react-native'
 import { SafeAreaView } from 'react-native-safe-area-context'
+import First from './src/components/First'
+import JSX from './src/components/JSX'
 
 const App = () => {
   return (
@@ -10,6 +12,8 @@ const App = () => {
         <Text style={{ fontSize: 30 }}>React native Developer</Text>
         <Text style={{ fontSize: 30 }}>Ashish Singh Chauhan</Text>
         <Button title='Press here.'/>
+        <First/>
+        <JSX/>
       </SafeAreaView>
     </View>
   )
