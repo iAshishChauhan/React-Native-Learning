@@ -1,3 +1,4 @@
+/* eslint-disable react-native/no-inline-styles */
 import { View, Text } from 'react-native'
 import React from 'react'
 // Just like swiftUI, hum JSX block mei sirf expressions likh sakte hain
@@ -11,7 +12,9 @@ const JSX = () => {
   }
   return (
     <View>
-      <Text>{name}</Text>
+      {/* /* JSX k andar jo bhi CSS ki properties hoti hain vo objects k form mei hoti hai */}
+      {/* Isilite style={} mtlab style mei ek JSX code pass karenge and uske andar vale { } denotes CSS object */}
+      <Text style={ {fontSize: 20} }>{name}</Text>
       <Text>My Age is {getAge()}</Text>
     </View>
   )
