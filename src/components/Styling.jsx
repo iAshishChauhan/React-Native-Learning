@@ -19,14 +19,24 @@ const Styling = () => {
       >
         Inline Styling
       </Text>
+
       {/* Internal Styling */}
       {/* Iske liye humko import karna padta hai StyleSheet and isko component k bahar banate hain */}
-      <Text style={inlineStyle.text}>Internal Styling</Text>
+      <Text style={internalStyle.text}>Internal Styling</Text>
+
       {/* External Styling */}
       {/* Agar same styling multiple compnents mei use karna hai to best practice is to create External styling */}
       {/* Iske liye ek alag folder and file bana lo style naam se and iska jo file hoga vo .js file hoga kyuki styling k andar js style objects hote hain*/}
       {/* And same ismei bhi StyleSheet create karenge bas alag specific file mei */}
       <Text style={style.text}>External Styling</Text>
+
+      {/* Precedence of stylings if same styling is applied on same component through diff methods */}
+      {/* Inline > Internal > External */}
+      <Text
+        style={[style.text, internalStyle.text, { backgroundColor: 'green' }]}
+      >
+        Mix Styling
+      </Text>
     </View>
   );
 };
@@ -34,11 +44,11 @@ const Styling = () => {
 // Main component k andar styling ho rhi hai isiliye ye Internal Styling hai
 // Since sarei stylings objects k form mei hoti hai to create mei bhi object pass karenge
 // ab iske andar jo bhi naam ka styling banana hai uska object bana lo
-const inlineStyle = StyleSheet.create({
+const internalStyle = StyleSheet.create({
   text: {
     fontSize: 30,
     color: 'white',
-    backgroundColor: 'crimson',
+    backgroundColor: 'purple',
     padding: 16,
     margin: 16,
     textAlign: 'center',

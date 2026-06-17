@@ -1,10 +1,10 @@
 import { StyleSheet } from 'react-native';
 
-export const style = StyleSheet.create({
+const style = StyleSheet.create({
   text: {
     fontSize: 30,
     color: 'white',
-    backgroundColor: 'crimson',
+    backgroundColor: 'pink',
     padding: 16,
     margin: 16,
     textAlign: 'center',
