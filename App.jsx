@@ -8,11 +8,12 @@ import { View } from 'react-native';
 // import OnPress from './src/components/OnPress'
 // import UseStateHook from './src/components/UseStateHook'
 // import Props from './src/components/Props'
-import InputText from './src/components/InputText';
+// import InputText from './src/components/InputText';
+import Styling from './src/components/Styling';
 
 const App = () => {
   return (
-    <View style={{ padding: 16 }}>
+    <View>
       <SafeAreaView style={{ gap: 16 }}>
         {/* <Text style={{ fontSize: 30 }}>React native Developer</Text> */}
         {/* <Text style={{ fontSize: 30 }}>Ashish Singh Chauhan</Text> */}
@@ -21,7 +22,8 @@ const App = () => {
         {/* <OnPress/> */}
         {/* <UseStateHook/> */}
         {/* <Props /> */}
-        <InputText />
+        {/* <InputText /> */}
+        <Styling />
       </SafeAreaView>
     </View>
   );
