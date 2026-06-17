@@ -14,13 +14,13 @@ const OnPress = () => {
     const getNameWithParam = (name) => {
         console.log("Ashish:: OnPress Called With Name", name)
     }
-  return (
-    <View>
-      <Text style={ {fontSize: 30} }>{name}</Text>
-      <Button title='Press' onPress={getName}/>
-      {/* <Button title='Press' onPress={ () => getNameWithParam('Ashish') }/> */}
-    </View>
-  )
+    return (
+        <View>
+            <Text style={{ fontSize: 30 }}>{name}</Text>
+            <Button title='Press' onPress={getName} />
+            {/* <Button title='Press' onPress={ () => getNameWithParam('Ashish') }/> */}
+        </View>
+    )
 }
 
 export default OnPress

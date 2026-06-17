@@ -6,17 +6,19 @@ import First from './src/components/First'
 import JSX from './src/components/JSX'
 import OnPress from './src/components/OnPress'
 import UseStateHook from './src/components/UseStateHook'
+import Props from './src/components/Props'
 
 const App = () => {
   return (
-    <View style={ { padding: 16 } }>
-      <SafeAreaView style={{ gap: 16}}>
-        <Text style={{ fontSize: 30 }}>React native Developer</Text>
-        <Text style={{ fontSize: 30 }}>Ashish Singh Chauhan</Text>
-        <First/>
-        <JSX/>
-        <OnPress/>
-        <UseStateHook/>
+    <View style={{ padding: 16 }}>
+      <SafeAreaView style={{ gap: 16 }}>
+        {/* <Text style={{ fontSize: 30 }}>React native Developer</Text> */}
+        {/* <Text style={{ fontSize: 30 }}>Ashish Singh Chauhan</Text> */}
+        {/* <First/> */}
+        {/* <JSX/> */}
+        {/* <OnPress/> */}
+        {/* <UseStateHook/> */}
+        <Props />
       </SafeAreaView>
     </View>
   )

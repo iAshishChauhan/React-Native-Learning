@@ -5,7 +5,7 @@ import { Text } from 'react-native'
 
 const First = () => {
     return (
-        <Text style={ { fontSize: 24 } }>First Component Text</Text>
+        <Text style={{ fontSize: 24 }}>First Component Text</Text>
     )
 }
 
