@@ -9,7 +9,8 @@ import { View } from 'react-native';
 // import UseStateHook from './src/components/UseStateHook'
 // import Props from './src/components/Props'
 // import InputText from './src/components/InputText';
-import Styling from './src/components/Styling';
+// import Styling from './src/components/Styling';
+import FlatListScreen from './src/components/FlatListScreen';
 
 const App = () => {
   return (
@@ -23,7 +24,8 @@ const App = () => {
         {/* <UseStateHook/> */}
         {/* <Props /> */}
         {/* <InputText /> */}
-        <Styling />
+        {/* <Styling /> */}
+        <FlatListScreen />
       </SafeAreaView>
     </View>
   );
