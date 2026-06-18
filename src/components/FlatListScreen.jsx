@@ -2,6 +2,8 @@ import { View, Text, FlatList } from 'react-native';
 import React from 'react';
 import { StyleSheet } from 'react-native';
 
+// This is a flat array and isko FlatList mei show kar sakte hain
+// Par agar nested data ho like item bhi ek array ho to we use SectionList
 const data = [
   { id: 1, title: 'Item 1' },
   { id: 2, title: 'Item 2' },
