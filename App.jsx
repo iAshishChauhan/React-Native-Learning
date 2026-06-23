@@ -12,7 +12,8 @@ import { View } from 'react-native';
 // import Styling from './src/components/Styling';
 // import FlatListScreen from './src/components/FlatListScreen';
 // import SectionListScreen from './src/components/SectionListScreen';
-import LoginForm from './src/components/LoginForm';
+// import LoginForm from './src/components/LoginForm';
+import ContactListScreen from './src/screens/contact/ContactListScreen';
 
 const App = () => {
   return (
@@ -29,7 +30,8 @@ const App = () => {
         {/* <Styling /> */}
         {/* <FlatListScreen /> */}
         {/* <SectionListScreen /> */}
-        <LoginForm />
+        {/* <LoginForm /> */}
+        <ContactListScreen />
       </SafeAreaView>
     </View>
   );
