@@ -1,6 +1,7 @@
 import React from 'react';
 import { SafeAreaProvider, SafeAreaView } from 'react-native-safe-area-context';
 import { StyleSheet } from 'react-native';
+import ClassComponents from './src/components/ClassComponents';
 // import { Button, Text } from 'react-native'
 // import First from './src/components/First'
 // import JSX from './src/components/JSX'
@@ -13,7 +14,7 @@ import { StyleSheet } from 'react-native';
 // import SectionListScreen from './src/components/SectionListScreen';
 // import LoginForm from './src/components/LoginForm';
 // import ContactListScreen from './src/screens/contact/ContactListScreen';
-import Grid from './src/components/Grid';
+// import Grid from './src/components/Grid';
 
 const App = () => {
   return (
@@ -32,7 +33,8 @@ const App = () => {
         {/* <SectionListScreen /> */}
         {/* <LoginForm /> */}
         {/* <ContactListScreen /> */}
-        <Grid />
+        {/* <Grid /> */}
+        <ClassComponents age={30} />
       </SafeAreaView>
     </SafeAreaProvider>
   );
