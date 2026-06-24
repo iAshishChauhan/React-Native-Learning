@@ -1,7 +1,6 @@
-/* eslint-disable react-native/no-inline-styles */
 import React from 'react';
-import { SafeAreaView } from 'react-native-safe-area-context';
-import { View } from 'react-native';
+import { SafeAreaProvider, SafeAreaView } from 'react-native-safe-area-context';
+import { StyleSheet } from 'react-native';
 // import { Button, Text } from 'react-native'
 // import First from './src/components/First'
 // import JSX from './src/components/JSX'
@@ -13,12 +12,13 @@ import { View } from 'react-native';
 // import FlatListScreen from './src/components/FlatListScreen';
 // import SectionListScreen from './src/components/SectionListScreen';
 // import LoginForm from './src/components/LoginForm';
-import ContactListScreen from './src/screens/contact/ContactListScreen';
+// import ContactListScreen from './src/screens/contact/ContactListScreen';
+import Grid from './src/components/Grid';
 
 const App = () => {
   return (
-    <View>
-      <SafeAreaView style={{ gap: 16 }}>
+    <SafeAreaProvider>
+      <SafeAreaView style={styles.safeArea}>
         {/* <Text style={{ fontSize: 30 }}>React native Developer</Text> */}
         {/* <Text style={{ fontSize: 30 }}>Ashish Singh Chauhan</Text> */}
         {/* <First/> */}
@@ -31,10 +31,19 @@ const App = () => {
         {/* <FlatListScreen /> */}
         {/* <SectionListScreen /> */}
         {/* <LoginForm /> */}
-        <ContactListScreen />
+        {/* <ContactListScreen /> */}
+        <Grid />
       </SafeAreaView>
-    </View>
+    </SafeAreaProvider>
   );
 };
+
+const styles = StyleSheet.create({
+  safeArea: {
+    flex: 1,
+    backgroundColor: '#ffffff',
+    gap: 16,
+  },
+});
 
 export default App;
