@@ -3,6 +3,8 @@ import { View, Text, Button } from 'react-native';
 import React, { useState } from 'react';
 
 const UseStateHook = () => {
+  // Hooks are APIs provided by React to be used in functional based components like useState for managing states
+  // like useEffect for managing life cycle
   // Array de-structuring concept here:
   // useState() -> gives two things: 1. variable name to observe 2. setter to update the value and UI
   // Default value of variable can be passed to useState hook like below:
