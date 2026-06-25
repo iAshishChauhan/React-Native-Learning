@@ -17,7 +17,8 @@ import { StyleSheet } from 'react-native';
 // import Grid from './src/components/Grid';
 // import ClassComponents from './src/components/ClassComponents';
 // import UseEffectHook from './src/components/UseEffectHook';
-import UseEffectHookUpdatingPhase from './src/components/UseEffectHookUpdatingPhase';
+// import UseEffectHookUpdatingPhase from './src/components/UseEffectHookUpdatingPhase';
+import UseEffectHookUnmountingPhase from './src/components/UseEffectHookUnmountingPhase';
 
 const App = () => {
   return (
@@ -39,7 +40,8 @@ const App = () => {
         {/* <Grid /> */}
         {/* <ClassComponents age={30} /> */}
         {/* <UseEffectHook /> */}
-        <UseEffectHookUpdatingPhase />
+        {/* <UseEffectHookUpdatingPhase /> */}
+        <UseEffectHookUnmountingPhase />
       </SafeAreaView>
     </SafeAreaProvider>
   );
