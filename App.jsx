@@ -1,7 +1,6 @@
 import React from 'react';
 import { SafeAreaProvider, SafeAreaView } from 'react-native-safe-area-context';
 import { StyleSheet } from 'react-native';
-
 // import { Button, Text } from 'react-native'
 // import First from './src/components/First'
 // import JSX from './src/components/JSX'
@@ -19,7 +18,8 @@ import { StyleSheet } from 'react-native';
 // import UseEffectHook from './src/components/UseEffectHook';
 // import UseEffectHookUpdatingPhase from './src/components/UseEffectHookUpdatingPhase';
 // import UseEffectHookUnmountingPhase from './src/components/UseEffectHookUnmountingPhase';
-import StyleWithButton from './src/components/StyleWithButton';
+// import StyleWithButton from './src/components/StyleWithButton';
+import Loader from './src/components/Loader';
 
 const App = () => {
   return (
@@ -43,7 +43,8 @@ const App = () => {
         {/* <UseEffectHook /> */}
         {/* <UseEffectHookUpdatingPhase /> */}
         {/* <UseEffectHookUnmountingPhase /> */}
-        <StyleWithButton />
+        {/* <StyleWithButton /> */}
+        <Loader />
       </SafeAreaView>
     </SafeAreaProvider>
   );
