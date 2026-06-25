@@ -18,7 +18,8 @@ import { StyleSheet } from 'react-native';
 // import ClassComponents from './src/components/ClassComponents';
 // import UseEffectHook from './src/components/UseEffectHook';
 // import UseEffectHookUpdatingPhase from './src/components/UseEffectHookUpdatingPhase';
-import UseEffectHookUnmountingPhase from './src/components/UseEffectHookUnmountingPhase';
+// import UseEffectHookUnmountingPhase from './src/components/UseEffectHookUnmountingPhase';
+import StyleWithButton from './src/components/StyleWithButton';
 
 const App = () => {
   return (
@@ -41,7 +42,8 @@ const App = () => {
         {/* <ClassComponents age={30} /> */}
         {/* <UseEffectHook /> */}
         {/* <UseEffectHookUpdatingPhase /> */}
-        <UseEffectHookUnmountingPhase />
+        {/* <UseEffectHookUnmountingPhase /> */}
+        <StyleWithButton />
       </SafeAreaView>
     </SafeAreaProvider>
   );
