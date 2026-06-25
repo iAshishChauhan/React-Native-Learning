@@ -16,7 +16,8 @@ import { StyleSheet } from 'react-native';
 // import ContactListScreen from './src/screens/contact/ContactListScreen';
 // import Grid from './src/components/Grid';
 // import ClassComponents from './src/components/ClassComponents';
-import UseEffectHook from './src/components/UseEffectHook';
+// import UseEffectHook from './src/components/UseEffectHook';
+import UseEffectHookUpdatingPhase from './src/components/UseEffectHookUpdatingPhase';
 
 const App = () => {
   return (
@@ -37,7 +38,8 @@ const App = () => {
         {/* <ContactListScreen /> */}
         {/* <Grid /> */}
         {/* <ClassComponents age={30} /> */}
-        <UseEffectHook />
+        {/* <UseEffectHook /> */}
+        <UseEffectHookUpdatingPhase />
       </SafeAreaView>
     </SafeAreaProvider>
   );
