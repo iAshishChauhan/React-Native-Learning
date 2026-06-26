@@ -22,7 +22,8 @@ import { StyleSheet } from 'react-native';
 // import Loader from './src/components/Loader';
 // import StatusBarExample from './src/components/StatusBarExample';
 // import UseRefHook from './src/components/UseRefHook';
-import ModalDialogBox from './src/components/ModalDialogBox';
+// import ModalDialogBox from './src/components/ModalDialogBox';
+import AlertExample from './src/components/AlertExample';
 
 const App = () => {
   return (
@@ -50,7 +51,8 @@ const App = () => {
         {/* <Loader /> */}
         {/* <StatusBarExample /> */}
         {/* <UseRefHook /> */}
-        <ModalDialogBox />
+        {/* <ModalDialogBox /> */}
+        <AlertExample />
       </SafeAreaView>
     </SafeAreaProvider>
   );
