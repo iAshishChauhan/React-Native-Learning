@@ -19,7 +19,10 @@ import { StyleSheet } from 'react-native';
 // import UseEffectHookUpdatingPhase from './src/components/UseEffectHookUpdatingPhase';
 // import UseEffectHookUnmountingPhase from './src/components/UseEffectHookUnmountingPhase';
 // import StyleWithButton from './src/components/StyleWithButton';
-import Loader from './src/components/Loader';
+// import Loader from './src/components/Loader';
+// import StatusBarExample from './src/components/StatusBarExample';
+// import UseRefHook from './src/components/UseRefHook';
+import ModalDialogBox from './src/components/ModalDialogBox';
 
 const App = () => {
   return (
@@ -44,7 +47,10 @@ const App = () => {
         {/* <UseEffectHookUpdatingPhase /> */}
         {/* <UseEffectHookUnmountingPhase /> */}
         {/* <StyleWithButton /> */}
-        <Loader />
+        {/* <Loader /> */}
+        {/* <StatusBarExample /> */}
+        {/* <UseRefHook /> */}
+        <ModalDialogBox />
       </SafeAreaView>
     </SafeAreaProvider>
   );
