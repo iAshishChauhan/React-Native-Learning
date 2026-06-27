@@ -7,9 +7,9 @@ import Icon from 'react-native-vector-icons/Ionicons';
 
 // Setup for Bottom Tabs
 type RootTabParamList = {
-  HomeScreen: undefined;
-  ProfileScreen: undefined;
-  SettingsScreen: undefined;
+  Home: undefined;
+  Profile: undefined;
+  Settings: undefined;
 };
 
 const Tab = createBottomTabNavigator<RootTabParamList>();
@@ -41,11 +41,11 @@ const getTabBarIcon = (
   size: number,
 ) => {
   let iconName: string = '';
-  if (routeName === 'HomeScreen') {
+  if (routeName === 'Home') {
     iconName = focused ? 'home' : 'home-outline';
-  } else if (routeName === 'ProfileScreen') {
+  } else if (routeName === 'Profile') {
     iconName = focused ? 'person' : 'person-outline';
-  } else if (routeName === 'SettingsScreen') {
+  } else if (routeName === 'Settings') {
     iconName = focused ? 'settings' : 'settings-outline';
   }
   return <Icon name={iconName} size={size} color={color} />;
@@ -69,9 +69,9 @@ const TabbarApp = () => {
               headerShown: false,
             })}
           >
-            <Tab.Screen name="HomeScreen" component={HomeScreen} />
-            <Tab.Screen name="ProfileScreen" component={ProfileScreen} />
-            <Tab.Screen name="SettingsScreen" component={SettingsScreen} />
+            <Tab.Screen name="Home" component={HomeScreen} />
+            <Tab.Screen name="Profile" component={ProfileScreen} />
+            <Tab.Screen name="Settings" component={SettingsScreen} />
           </Tab.Navigator>
         </NavigationContainer>
       </SafeAreaView>
