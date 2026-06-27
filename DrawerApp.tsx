@@ -8,17 +8,17 @@ import {
 } from '@react-navigation/drawer';
 import { NavigationContainer } from '@react-navigation/native';
 
-const Drawer = createDrawerNavigator<RootStackParamList>();
+const Drawer = createDrawerNavigator<RootDrawerParamList>();
 
-type RootStackParamList = {
+type RootDrawerParamList = {
   HomeScreen: undefined;
   ProfileScreen: undefined;
   SettingsScreen: undefined;
 };
 
-type HomeProps = DrawerScreenProps<RootStackParamList, 'HomeScreen'>;
-type ProfileProps = DrawerScreenProps<RootStackParamList, 'ProfileScreen'>;
-type SettingsProps = DrawerScreenProps<RootStackParamList, 'SettingsScreen'>;
+type HomeProps = DrawerScreenProps<RootDrawerParamList, 'HomeScreen'>;
+type ProfileProps = DrawerScreenProps<RootDrawerParamList, 'ProfileScreen'>;
+type SettingsProps = DrawerScreenProps<RootDrawerParamList, 'SettingsScreen'>;
 
 // This can be a separate component as well
 const HomeScreen = ({ navigation }: HomeProps) => (
