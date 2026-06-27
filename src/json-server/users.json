@@ -1,24 +1,35 @@
 {
   "users": [
     {
-      "id": 1,
+      "id": "1",
       "name": "Ashish",
       "email": "ashish@gmail.com"
     },
     {
-      "id": 2,
+      "id": "2",
       "name": "Ayush",
       "email": "Ayush@gmail.com"
     },
     {
-      "id": 3,
+      "id": "3",
       "name": "Bhodu",
       "email": "Bhodu@gmail.com"
     },
     {
-      "id": 4,
+      "id": "4",
       "name": "Ajay",
       "email": "Ajay@gmail.com"
+    },
+    {
+      "id": "vF_QNn_bQj4",
+      "name": "FD",
+      "email": "Cg@gg.com"
+    },
+    {
+      "id": "tI6JhAVAM-g",
+      "name": "Ah",
+      "email": "Gg@cc.com"
     }
-  ]
+  ],
+  "$schema": "./node_modules/json-server/schema.json"
 }
