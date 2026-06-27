@@ -1,6 +1,12 @@
-import React, { ComponentType, useState } from 'react';
+import React, { ComponentType } from 'react';
 import { Pressable, SectionList, StyleSheet, Text, View } from 'react-native';
-import { SafeAreaProvider, SafeAreaView } from 'react-native-safe-area-context';
+import { NavigationIndependentTree } from '@react-navigation/core';
+import { NavigationContainer } from '@react-navigation/native';
+import {
+  createNativeStackNavigator,
+  NativeStackScreenProps,
+} from '@react-navigation/native-stack';
+import { SafeAreaProvider } from 'react-native-safe-area-context';
 
 import StackNavigationApp from '../StackNavigationApp';
 import DrawerApp from '../DrawerApp';
@@ -37,6 +43,7 @@ import Search from './components/Search';
 type Lesson = {
   title: string;
   component: ComponentType;
+  independentNavigation?: boolean;
 };
 
 type LessonSection = {
@@ -96,69 +103,117 @@ const lessonSections: LessonSection[] = [
   {
     title: 'Navigation',
     data: [
-      { title: 'Stack Navigation', component: StackNavigationApp },
-      { title: 'Bottom Tabs', component: TabbarApp },
-      { title: 'Drawer', component: DrawerApp },
-      { title: 'Top Tabs', component: TopTabNavigationApp },
+      {
+        title: 'Stack Navigation',
+        component: StackNavigationApp,
+        independentNavigation: true,
+      },
+      {
+        title: 'Bottom Tabs',
+        component: TabbarApp,
+        independentNavigation: true,
+      },
+      { title: 'Drawer', component: DrawerApp, independentNavigation: true },
+      {
+        title: 'Top Tabs',
+        component: TopTabNavigationApp,
+        independentNavigation: true,
+      },
     ],
   },
 ];
 
-const LessonLauncher = () => {
-  const [selectedLesson, setSelectedLesson] = useState<Lesson | null>(null);
-  const SelectedComponent = selectedLesson?.component;
+type LessonStackParamList = {
+  LessonHome: undefined;
+  [param: string]: undefined;
+};
 
-  if (SelectedComponent) {
-    return (
-      <SafeAreaProvider>
-        <SafeAreaView style={styles.container}>
-          <View style={styles.header}>
-            <Pressable
-              style={styles.backButton}
-              onPress={() => setSelectedLesson(null)}
-            >
-              <Text style={styles.backButtonText}>Back</Text>
-            </Pressable>
-            <Text style={styles.headerTitle}>{selectedLesson.title}</Text>
+type LessonHomeScreenProps = NativeStackScreenProps<
+  LessonStackParamList,
+  'LessonHome'
+>;
+
+const Stack = createNativeStackNavigator<LessonStackParamList>();
+const lessons = lessonSections.flatMap(section => section.data);
+
+const LessonHomeScreen = ({ navigation }: LessonHomeScreenProps) => {
+  return (
+    <View style={styles.container}>
+      <SectionList
+        sections={lessonSections}
+        keyExtractor={item => item.title}
+        renderSectionHeader={({ section }) => (
+          <Text style={styles.sectionTitle}>{section.title}</Text>
+        )}
+        renderItem={({ item }) => (
+          <Pressable
+            style={styles.lessonRow}
+            onPress={() => navigation.push(item.title)}
+          >
+            <Text style={styles.lessonTitle}>{item.title}</Text>
+            <Text style={styles.chevron}>{'>'}</Text>
+          </Pressable>
+        )}
+        ListHeaderComponent={
+          <View style={styles.listHeader}>
+            <Text style={styles.title}>React Native Lessons</Text>
+            <Text style={styles.subtitle}>
+              Select any example and check the code for the same.
+            </Text>
           </View>
-          <View style={styles.lessonContainer}>
-            <SelectedComponent />
-          </View>
-        </SafeAreaView>
-      </SafeAreaProvider>
+        }
+        contentContainerStyle={styles.listContent}
+        stickySectionHeadersEnabled={false}
+      />
+    </View>
+  );
+};
+
+const getLessonScreen = (lesson: Lesson) => {
+  const LessonComponent = lesson.component;
+
+  return function LessonScreen() {
+    const content = (
+      <View style={styles.lessonContainer}>
+        <LessonComponent />
+      </View>
     );
-  }
 
+    if (lesson.independentNavigation) {
+      return <NavigationIndependentTree>{content}</NavigationIndependentTree>;
+    }
+
+    return content;
+  };
+};
+
+const LessonLauncher = () => {
   return (
     <SafeAreaProvider>
-      <SafeAreaView style={styles.container}>
-        <SectionList
-          sections={lessonSections}
-          keyExtractor={item => item.title}
-          renderSectionHeader={({ section }) => (
-            <Text style={styles.sectionTitle}>{section.title}</Text>
-          )}
-          renderItem={({ item }) => (
-            <Pressable
-              style={styles.lessonRow}
-              onPress={() => setSelectedLesson(item)}
-            >
-              <Text style={styles.lessonTitle}>{item.title}</Text>
-              <Text style={styles.chevron}>{'>'}</Text>
-            </Pressable>
-          )}
-          ListHeaderComponent={
-            <View style={styles.listHeader}>
-              <Text style={styles.title}>React Native Lessons</Text>
-              <Text style={styles.subtitle}>
-                Select any example without editing imports.
-              </Text>
-            </View>
-          }
-          contentContainerStyle={styles.listContent}
-          stickySectionHeadersEnabled={false}
-        />
-      </SafeAreaView>
+      <NavigationContainer>
+        <Stack.Navigator
+          screenOptions={{
+            headerStyle: styles.header,
+            headerTitleStyle: styles.headerTitle,
+            headerTintColor: '#111827',
+            contentStyle: styles.container,
+          }}
+        >
+          <Stack.Screen
+            name="LessonHome"
+            component={LessonHomeScreen}
+            options={{ title: 'React Native Lessons' }}
+          />
+          {lessons.map(lesson => (
+            <Stack.Screen
+              key={lesson.title}
+              name={lesson.title}
+              component={getLessonScreen(lesson)}
+              options={{ title: lesson.title }}
+            />
+          ))}
+        </Stack.Navigator>
+      </NavigationContainer>
     </SafeAreaProvider>
   );
 };
@@ -213,23 +268,9 @@ const styles = StyleSheet.create({
     color: '#6b7280',
   },
   header: {
-    minHeight: 52,
-    borderBottomWidth: 1,
-    borderBottomColor: '#e5e7eb',
-    flexDirection: 'row',
-    alignItems: 'center',
-    paddingHorizontal: 12,
-  },
-  backButton: {
-    paddingVertical: 8,
-    paddingRight: 12,
-  },
-  backButtonText: {
-    fontSize: 16,
-    color: '#2563eb',
+    backgroundColor: '#ffffff',
   },
   headerTitle: {
-    flex: 1,
     fontSize: 17,
     fontWeight: 'bold',
     color: '#111827',

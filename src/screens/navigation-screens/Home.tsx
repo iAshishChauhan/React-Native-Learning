@@ -13,7 +13,7 @@ const Home = ({ navigation, route }: Props) => {
       <Text>{username}</Text>
       <Button
         title="Go to About Screen"
-        onPress={() => navigation.navigate('About')}
+        onPress={() => navigation.push('About')}
       />
     </View>
   );
