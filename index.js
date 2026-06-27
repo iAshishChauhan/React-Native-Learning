@@ -7,7 +7,7 @@ import { AppRegistry } from 'react-native';
 // import NavigationApp from './NavigationApp';
 // import DrawerApp from './DrawerApp';
 // import TabbarApp from './TabbarApp';
-import TopTabNavigation from './TopTabNavigation';
+import TopTabNavigation from './TopTabNavigationApp';
 import { name as appName } from './app.json';
 
 // AppRegistry.registerComponent(appName, () => App);
