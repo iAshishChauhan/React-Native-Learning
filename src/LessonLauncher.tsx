@@ -51,8 +51,6 @@ type LessonSection = {
   data: Lesson[];
 };
 
-const ClassComponentExample = () => <ClassComponents age={30} />;
-
 const lessonSections: LessonSection[] = [
   {
     title: 'Basics',
@@ -71,7 +69,10 @@ const lessonSections: LessonSection[] = [
     title: 'State And Lifecycle',
     data: [
       { title: 'useState', component: UseStateHook },
-      { title: 'Class Component', component: ClassComponentExample },
+      {
+        title: 'Class Component',
+        component: () => <ClassComponents age={30} />,
+      },
       { title: 'useEffect', component: UseEffectHook },
       { title: 'useEffect Updating', component: UseEffectHookUpdatingPhase },
       { title: 'useEffect Cleanup', component: UseEffectHookUnmountingPhase },
