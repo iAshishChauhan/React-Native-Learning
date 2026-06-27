@@ -26,7 +26,8 @@ import { StyleSheet } from 'react-native';
 // import AlertExample from './src/components/AlertExample';
 // import GET_API from './src/components/GET_API';
 // import POST_API from './src/components/POST_API';
-import PlatformExample from './src/components/PlatformExample';
+// import PlatformExample from './src/components/PlatformExample';
+import Search from './src/components/Search';
 
 const App = () => {
   return (
@@ -58,7 +59,8 @@ const App = () => {
         {/* <AlertExample /> */}
         {/* <GET_API /> */}
         {/* <POST_API /> */}
-        <PlatformExample />
+        {/* <PlatformExample /> */}
+        <Search />
       </SafeAreaView>
     </SafeAreaProvider>
   );
