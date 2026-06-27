@@ -23,7 +23,8 @@ import { StyleSheet } from 'react-native';
 // import StatusBarExample from './src/components/StatusBarExample';
 // import UseRefHook from './src/components/UseRefHook';
 // import ModalDialogBox from './src/components/ModalDialogBox';
-import AlertExample from './src/components/AlertExample';
+// import AlertExample from './src/components/AlertExample';
+import GET_API from './src/components/GET_API';
 
 const App = () => {
   return (
@@ -52,7 +53,8 @@ const App = () => {
         {/* <StatusBarExample /> */}
         {/* <UseRefHook /> */}
         {/* <ModalDialogBox /> */}
-        <AlertExample />
+        {/* <AlertExample /> */}
+        <GET_API />
       </SafeAreaView>
     </SafeAreaProvider>
   );
