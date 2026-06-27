@@ -25,7 +25,8 @@ import { StyleSheet } from 'react-native';
 // import ModalDialogBox from './src/components/ModalDialogBox';
 // import AlertExample from './src/components/AlertExample';
 // import GET_API from './src/components/GET_API';
-import POST_API from './src/components/POST_API';
+// import POST_API from './src/components/POST_API';
+import PlatformExample from './src/components/PlatformExample';
 
 const App = () => {
   return (
@@ -56,7 +57,8 @@ const App = () => {
         {/* <ModalDialogBox /> */}
         {/* <AlertExample /> */}
         {/* <GET_API /> */}
-        <POST_API />
+        {/* <POST_API /> */}
+        <PlatformExample />
       </SafeAreaView>
     </SafeAreaProvider>
   );
