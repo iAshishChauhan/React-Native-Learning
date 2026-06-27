@@ -50,7 +50,15 @@ const NavigationApp = () => {
               component={Home}
               options={{ headerShown: true }}
             />
-            <Stack.Screen name="About" component={About} />
+            <Stack.Screen
+              name="About"
+              component={About}
+              options={{
+                headerShown: false,
+                // headerTitle: We can pass custom component here to show on nav bar
+                // headerRight: same as above and it will come on right side of nav bar
+              }}
+            />
           </Stack.Navigator>
         </NavigationContainer>
       </SafeAreaView>
