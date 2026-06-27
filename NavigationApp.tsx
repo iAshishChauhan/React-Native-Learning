@@ -5,12 +5,14 @@ import { NavigationContainer } from '@react-navigation/native';
 import { createNativeStackNavigator } from '@react-navigation/native-stack';
 import Home from './src/screens/navigation-screens/Home';
 import About from './src/screens/navigation-screens/About';
+import Login from './src/screens/navigation-screens/Login';
 
 const Stack = createNativeStackNavigator<RootStackParamList>();
 
 export type RootStackParamList = {
   Home: undefined;
   About: undefined;
+  Login: undefined;
 };
 
 const NavigationApp = () => {
@@ -19,6 +21,7 @@ const NavigationApp = () => {
       <SafeAreaView style={styles.safeArea}>
         <NavigationContainer>
           <Stack.Navigator>
+            <Stack.Screen name="Login" component={Login} />
             <Stack.Screen
               name="Home"
               component={Home}
