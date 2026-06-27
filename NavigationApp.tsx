@@ -10,7 +10,9 @@ import Login from './src/screens/navigation-screens/Login';
 const Stack = createNativeStackNavigator<RootStackParamList>();
 
 export type RootStackParamList = {
-  Home: undefined;
+  Home: {
+    username: string;
+  };
   About: undefined;
   Login: undefined;
 };
@@ -20,8 +22,29 @@ const NavigationApp = () => {
     <SafeAreaProvider>
       <SafeAreaView style={styles.safeArea}>
         <NavigationContainer>
-          <Stack.Navigator>
-            <Stack.Screen name="Login" component={Login} />
+          <Stack.Navigator
+            screenOptions={{
+              // Global styling
+              headerStyle: styles.header,
+              headerTitleStyle: styles.headerTitle,
+              headerTintColor: 'crimson',
+              contentStyle: styles.screen,
+            }}
+          >
+            <Stack.Screen
+              name="Login"
+              component={Login}
+              //   options={{ // Specific screen styling
+              //     title: 'Login Screen',
+              //     headerTintColor: 'crimson',
+              //     headerTitleStyle: {
+              //       fontSize: 20,
+              //     },
+              //     headerStyle: {
+              //       backgroundColor: 'pink',
+              //     },
+              //   }}
+            />
             <Stack.Screen
               name="Home"
               component={Home}
@@ -42,5 +65,15 @@ const styles = StyleSheet.create({
     flex: 1,
     backgroundColor: '#ffffff',
     gap: 16,
+  },
+  screen: {
+    backgroundColor: 'lightgreen',
+  },
+  header: {
+    backgroundColor: 'yellow',
+  },
+  headerTitle: {
+    fontSize: 20,
+    fontWeight: 'bold',
   },
 });
