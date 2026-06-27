@@ -4,7 +4,7 @@ import axios from 'axios';
 
 const POST_API = () => {
   const [formData, setFormData] = useState({ id: '', name: '', email: '' });
-  const handleInput = (field, value) => {
+  const handleInput = (field: string, value: string) => {
     setFormData({ ...formData, [field]: value });
   };
   const handleSubmit = async () => {
@@ -17,7 +17,7 @@ const POST_API = () => {
       Alert.alert('Success!', 'Data submitted successfully');
       setFormData({ id: '', name: '', email: '' });
     } catch (error) {
-      Alert.alert('Error!', 'Failed to submit data');
+      Alert.alert('Error!', `Failed to submit data, ${error}`);
     }
   };
   return (
